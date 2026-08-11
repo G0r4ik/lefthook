@@ -2,5 +2,21 @@ version: 2
 updates:
   - package-ecosystem: github-actions
     directory: /
+    commit-message:
+      prefix: "chore"
+    cooldown:
+      default-days: 7
     schedule:
       interval: daily
+
+  - package-ecosystem: npm
+    directory: /
+    commit-message:
+      prefix: "chore"
+    cooldown:
+      default-days: 7
+    schedule:
+      interval: daily
+    groups:
+      vue-ecosystem:
+        patterns: ["vue*", "@vueuse/*", "vue-router", "pinia"]
